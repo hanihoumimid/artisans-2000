@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr" style="scroll-behavior:smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artisans 2000 - Plomberie & Électricité à Paris et IDF</title>
+    <meta name="description" content="Artisans 2000 : Votre partenaire de confiance pour tous vos travaux de plomberie et d'électricité générale à Paris et en Île-de-France. Dépannage, installation, rénovation, 7j/7.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .gradient-button {
+            background-image: linear-gradient(to right, #6EE7B7 0%, #3B82F6 100%);
+            transition: all 0.3s ease-in-out;
+        }
+        .gradient-button:hover {
+            background-position: right center;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body x-data="{}" class="font-sans text-gray-800 bg-gray-50">
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm" x-data="{ open: false }">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-gray-900">Artisans 2000</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex space-x-8">
+                <a href="#hero" class="text-gray-600 hover:text-blue-600 font-medium">Accueil</a>
+                <a href="#services" class="text-gray-600 hover:text-blue-600 font-medium">Nos Services</a>
+                <a href="#why-us" class="text-gray-600 hover:text-blue-600 font-medium">Pourquoi Nous Choisir</a>
+                <a href="#testimonials" class="text-gray-600 hover:text-blue-600 font-medium">Témoignages</a>
+                <a href="#contact" class="text-gray-600 hover:text-blue-600 font-medium">Contact</a>
+            </div>
+
+            <!-- Mobile Burger Icon -->
+            <div class="lg:hidden">
+                <button @click="open = !open" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path x-show="!open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        <path x-show="open" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95" class="lg:hidden bg-white shadow-lg py-2">
+            <a href="#hero" @click="open = false" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Accueil</a>
+            <a href="#services" @click="open = false" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Nos Services</a>
+            <a href="#why-us" @click="open = false" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Pourquoi Nous Choisir</a>
+            <a href="#testimonials" @click="open = false" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Témoignages</a>
+            <a href="#contact" @click="open = false" class="block px-4 py-2 text-gray-700 hover:bg-gray-100">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="container mx-auto px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center min-h-[85vh]">
+        <div class="lg:order-1" data-aos="fade-right">
+            <h1 class="text-5xl lg:text-7xl font-bold leading-tight text-gray-900 mb-6">
+                Votre Artisan Plombier & Électricien de Confiance à <span class="text-blue-600">Paris et IDF</span>
+            </h1>
+            <p class="text-lg lg:text-xl text-gray-600 mb-8">
+                Artisans 2000 vous offre des solutions complètes et fiables pour toutes vos installations, dépannages et rénovations en plomberie et électricité, avec un interlocuteur unique.
+            </p>
+            <a href="#contact" class="inline-block px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg gradient-button">
+                Demander un Devis Gratuit
+            </a>
+        </div>
+        <div class="lg:order-2" data-aos="fade-left" data-aos-delay="200">
+            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?auto=format&fit=crop&w=1600&q=80" alt="Artisan Plombier et Électricien en action" class="w-full rounded-3xl shadow-2xl h-[500px] lg:h-[600px] object-cover">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 lg:py-24 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Nos Solutions Complètes
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1585704032915-c3400ca199e7?auto=format&fit=crop&w=800&q=80" alt="Dépannage Plomberie et Électricité" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Dépannage Urgence 7j/7</h3>
+                    <p class="text-gray-600">
+                        Fuite d'eau, WC bouché, panne électrique, court-circuit ? Nos artisans qualifiés interviennent rapidement 7j/7 et 24h/24 dans toute l'Île-de-France pour diagnostiquer et résoudre vos problèmes de plomberie ou d'électricité avec efficacité et sécurité.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&w=800&q=80" alt="Rénovation Salle de Bain et Cuisine" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Rénovation & Installation</h3>
+                    <p class="text-gray-600">
+                        Confiez-nous la rénovation complète de vos salles de bains, cuisines ou autres pièces. Nous gérons l'installation de vos équipements sanitaires, robinetterie, chauffe-eau, ainsi que la création de vos réseaux électriques et l'éclairage, avec des matériaux de qualité et un respect strict des normes.
+                    </p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg hover:-translate-y-2 transition-transform duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?auto=format&fit=crop&w=800&q=80" alt="Mise aux Normes Électriques" class="w-full h-48 object-cover rounded-xl mb-6">
+                    <h3 class="text-2xl font-semibold text-gray-900 mb-3">Mise aux Normes & Sécurité</h3>
+                    <p class="text-gray-600">
+                        Assurez la conformité et la sécurité de vos installations électriques et plomberie. Nous réalisons la mise aux normes de vos tableaux divisionnaires, vérifions l'étanchéité de vos systèmes et optimisons vos réseaux pour un fonctionnement fiable et conforme aux dernières réglementations NF C15-100 et NF DTU.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pourquoi Nous Choisir Section -->
+    <section id="why-us" class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Nos Engagements pour Votre Sérénité
+            </h2>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Expertise Complète</h3>
+                    <p class="text-gray-600">Notre double compétence en plomberie et électricité garantit un diagnostic global et des solutions coordonnées, évitant les multiples interlocuteurs.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Interventions Rapides 7j/7</h3>
+                    <p class="text-gray-600">Nous assurons des dépannages urgents dans toute l'Île-de-France, disponibles 7 jours sur 7 pour toutes vos pannes et fuites.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.279a9 9 0 12-11.399 11.399L4.707 19.3L4 19.3V20H3v-1.3l-.707-.707A9 9 0 012.382 7.721z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Garantie Décennale</h3>
+                    <p class="text-gray-600">Toutes nos installations bénéficient d'une garantie décennale, vous offrant une tranquillité d'esprit sur la durabilité de nos travaux.</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-lg text-center" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex justify-center mb-4">
+                        <svg class="w-12 h-12 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-2">Devis Transparents</h3>
+                    <p class="text-gray-600">Nos devis sont clairs, détaillés et gratuits. Aucune mauvaise surprise, seulement un engagement de prix juste et équitable pour nos prestations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Témoignages Section -->
+    <section id="testimonials" class="py-16 lg:py-24 bg-gradient-to-r from-blue-50 to-indigo-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Ce que nos clients disent de nous
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Sophie+Martin&background=random" alt="Sophie Martin" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-gray-900">Sophie Martin</p>
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic text-gray-700 leading-relaxed">
+                        "Service impeccable ! Artisans 2000 est intervenu très rapidement pour une fuite d'eau urgente un dimanche. Le plombier était très professionnel, a trouvé la panne en un rien de temps et le prix était tout à fait raisonnable. Je recommande vivement pour leur réactivité et leur savoir-faire."
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Marc+Dubois&background=random" alt="Marc Dubois" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-gray-900">Marc Dubois</p>
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic text-gray-700 leading-relaxed">
+                        "Nous avons fait appel à Artisans 2000 pour une mise aux normes complète de notre installation électrique. L'équipe a été très professionnelle, les explications claires et le chantier impeccablement propre. Le résultat est parfait, nous nous sentons en sécurité désormais. Un grand merci !"
+                    </p>
+                </div>
+                <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 shadow-xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://ui-avatars.com/api/?name=Laura+Petit&background=random" alt="Laura Petit" class="w-12 h-12 rounded-full mr-4 object-cover">
+                        <div>
+                            <p class="font-semibold text-gray-900">Laura Petit</p>
+                            <div class="flex text-yellow-400">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                                <svg class="w-5 h-5 text-gray-300" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.539 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.929 8.72c-.783-.57-.381-1.81.588-1.81h3.462a1 1 0 00.95-.69l1.07-3.292z"></path></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-lg italic text-gray-700 leading-relaxed">
+                        "Excellent travail pour la rénovation de ma salle de bain. L'équipe a géré la plomberie et l'électricité de A à Z avec un grand professionnalisme. Le chantier a été livré dans les délais et le résultat dépasse mes attentes. Je les recommande les yeux fermés !"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 lg:py-24 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl lg:text-5xl font-bold text-center text-gray-900 mb-12" data-aos="fade-up">
+                Contactez Artisans 2000
+            </h2>
+            <div class="grid lg:grid-cols-2 gap-12 items-start">
+                <div data-aos="fade-right">
+                    <h3 class="text-3xl font-semibold text-gray-900 mb-6">Demandez un devis ou une intervention</h3>
+                    <form class="bg-white rounded-2xl p-8 shadow-xl space-y-6">
+                        <div>
+                            <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Nom Complet</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Votre nom et prénom">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email</label>
+                            <input type="email" id="email" name="email" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="votreadresse@email.com">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-gray-700 text-sm font-bold mb-2">Téléphone</label>
+                            <input type="tel" id="phone" name="phone" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="01 23 45 67 89">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Votre Message</label>
+                            <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Décrivez votre besoin (dépannage, devis, type de travaux...)"></textarea>
+                        </div>
+                        <button type="submit" class="w-full px-8 py-4 text-lg font-semibold text-white rounded-full shadow-lg gradient-button">
+                            Envoyer votre demande
+                        </button>
+                    </form>
+                </div>
+
+                <div data-aos="fade-left" data-aos-delay="200">
+                    <div class="bg-white rounded-2xl p-8 shadow-xl mb-8">
+                        <h3 class="text-3xl font-semibold text-gray-900 mb-6">Nos Coordonnées</h3>
+                        <p class="text-gray-700 mb-4"><strong class="font-medium">Adresse :</strong> 1 Rue de la Paix, 75002 Paris</p>
+                        <p class="text-gray-700 mb-4"><strong class="font-medium">Téléphone :</strong> 
+                            <a href="tel:0143584000" class="text-blue-600 hover:underline">01 43 58 40 00</a> / 
+                            <a href="tel:0143582050" class="text-blue-600 hover:underline">01 43 58 20 50</a> / 
+                            <a href="tel:0661984000" class="text-blue-600 hover:underline">06 61 98 40 00</a>
+                        </p>
+                        <p class="text-gray-700 mb-4"><strong class="font-medium">Email :</strong> <a href="mailto:contact@artisans2000.fr" class="text-blue-600 hover:underline">contact@artisans2000.fr</a></p>
+                        <p class="text-gray-700 mb-4"><strong class="font-medium">Horaires :</strong> 
+                            Interventions 7j/7 - 24h/24 pour les urgences. <br>
+                            Bureau : Lun-Ven 8h-18h.
+                        </p>
+                    </div>
+                    <iframe class="w-full h-64 rounded-xl shadow-lg" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.7060596956577!2d2.33088301567406!3d48.86985277928739!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2c3b8c6a53%3A0xc0f8c2b5e28a5d4c!2s1%20Rue%20de%20la%20Paix%2C%2075002%20Paris!5e0!3m2!1sfr!2sfr!4v1678912345678!5m2!1sfr!2sfr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-300 py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Artisans 2000</h3>
+                <p class="text-sm mb-4">Votre entreprise artisanale de confiance pour tous vos besoins en plomberie et électricité à Paris et en Île-de-France.</p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24"><path d="M12 2.04c-5.46 0-9.92 4.46-9.92 9.92 0 4.36 3.4 7.95 7.8 8.8.84.15 1.15-.36 1.15-.79 0-.39-.01-1.42-.02-2.79-3.3.72-4-1.57-4-1.57-.54-1.37-1.32-1.74-1.32-1.74-1.08-.74.08-.73.08-.73 1.2.08 1.84 1.23 1.84 1.23 1.07 1.83 2.8 1.3 3.48.99.11-.77.42-1.3.76-1.6c-2.65-.3-5.46-1.33-5.46-5.92 0-1.3.46-2.36 1.23-3.2-.12-.3-.53-1.52.12-3.17 0 0 1-.32 3.3.12 1-.28 2.07-.42 3.13-.43 1.06.01 2.13.15 3.13.43 2.3-.44 3.3-.12 3.3-.12.65 1.65.23 2.87.12 3.17.76.84 1.22 1.9 1.22 3.2 0 4.6-2.8 5.6-5.47 5.9.42.36.8 1.05.8 2.12 0 1.53-.01 2.77-.01 3.15 0 .43.3.95 1.16.78C20.57 19.99 24 16.4 24 12.04 24 6.58 19.54 2.04 14.08 2.04H12z"></path></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24"><path d="M22.25 12.037c0-5.654-4.576-10.23-10.23-10.23-5.654 0-10.23 4.576-10.23 10.23 0 5.006 3.565 9.173 8.285 10.038v-7.143h-2.502v-2.895h2.502v-2.22c0-2.484 1.493-3.858 3.746-3.858 1.129 0 2.102.107 2.383.155v2.666h-1.58c-1.246 0-1.488.592-1.488 1.465v1.928h2.956l-.48 2.895h-2.476v7.143c4.72-0.865 8.285-5.032 8.285-10.038z"></path></svg></a>
+                    <a href="#" class="text-gray-400 hover:text-white"><svg fill="currentColor" class="h-6 w-6" viewBox="0 0 24 24"><path d="M22.46 6.017c-.2-.088-.415-.164-.636-.219-.544-.13-1.848-.307-3.414-.307h-11.412c-1.566 0-2.87.177-3.414.307-.221.055-.436.13-.636.219-1.245.54-1.624 1.41-1.624 3.107v6.756c0 1.697.379 2.567 1.624 3.107.2.088.415.164.636.219 1.258.303 3.176.307 3.414.307h11.412c1.566 0 2.87-.177 3.414-.307.221-.055.436-.13.636-.219 1.245-.54 1.624-1.41 1.624-3.107v-6.756c0-1.697-.379-2.567-1.624-3.107zm-14.887 9.157v-6.338l6.338 3.169-6.338 3.169z"></path></svg></a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Nos Services</h3>
+                <ul class="space-y-2">
+                    <li><a href="#services" class="text-gray-400 hover:text-white">Dépannage Plomberie</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white">Dépannage Électricité</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white">Rénovation SDB & Cuisines</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white">Mise aux Normes Électriques</a></li>
+                    <li><a href="#services" class="text-gray-400 hover:text-white">Installation Chauffe-eau</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">Contact</h3>
+                <p class="text-sm mb-2">1 Rue de la Paix, 75002 Paris</p>
+                <p class="text-sm mb-2"><a href="tel:0143584000" class="text-gray-400 hover:text-white">01 43 58 40 00</a></p>
+                <p class="text-sm mb-2"><a href="mailto:contact@artisans2000.fr" class="text-gray-400 hover:text-white">contact@artisans2000.fr</a></p>
+                <p class="text-sm">Disponibilité 7j/7 - 24h/24</p>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-bold text-white mb-4">À Propos</h3>
+                <ul class="space-y-2">
+                    <li><a href="#why-us" class="text-gray-400 hover:text-white">Nos Engagements</a></li>
+                    <li><a href="#testimonials" class="text-gray-400 hover:text-white">Avis Clients</a></li>
+                    <li><a href="#contact" class="text-gray-400 hover:text-white">Demander un Devis</a></li>
+                    <li><a href="#" class="text-gray-400 hover:text-white">Mentions Légales</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="mt-10 text-center text-gray-500 text-sm">
+            &copy; <span x-text="new Date().getFullYear()"></span> Artisans 2000. Tous droits réservés.
+        </div>
+    </footer>
+
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+        });
+    </script>
+</body>
+</html>
